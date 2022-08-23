@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def islower(c):
-    """checks if a char is lower or upper"""
-    for i in range(ord('a'), ord('z')):
-        if chr(i) == c:
-            return True
-    return False
+    """checks if a char is lower"""
+    if ord(c) < ord('a') or ord(c) > ord('z'):
+        return False
+    return True
