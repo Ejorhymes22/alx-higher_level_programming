@@ -10,7 +10,6 @@ if __name__ == "__main__":
     b = int(argv[3])
     op = argv[2]
 
-
     if op == '+':
         cal = add(a, b)
     elif op == '-':
