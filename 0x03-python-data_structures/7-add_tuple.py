@@ -5,7 +5,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     x = list(tuple_a)
     y = list(tuple_b)
     tople = []
-        
+
     while i < 2:
         if len(x) < 2:
             x.append(0)
@@ -13,4 +13,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
             y.append(0)
         tople.append(x[i] + y[i])
         i += 1
-    return tuple(tople)  
+    return tuple(tople)
