@@ -18,7 +18,6 @@ int is_palindrome(listint_t **head)
 	int i = 0;
 	int f = 0;
 	int a = 0;
- 
 
 	r = *head;
 	while (r)
@@ -49,7 +48,8 @@ int is_palindrome(listint_t **head)
 			f++;
 		a++, --i;
 	}
-	
+	free(x);
+
 	if (f == len)
 		return (1);
 		
