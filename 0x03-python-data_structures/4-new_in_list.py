@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def new_in_list(my_list, idx, element):
     """replaces an element in al list at a specific position
     without modifying the original list"""
