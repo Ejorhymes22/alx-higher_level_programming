@@ -4,58 +4,6 @@
 #include <stdio.h>
 
 /**
- * sparse_pointers - checks if a singly link is pal recursively
- * @h: head of singly list
- * @len: the length of list
- *
- * Return: 1 or 0
- */
-
-listint_t **sparse_pointers(listint_t **h, int len)
-{
-	int i = 0;
-	int k = 0;
-
-	while (len)
-	{
-		while (i > k)
-		{
-			h[i] = (h[i])->next;
-			k++;
-		}
-		i++;
-		len--;
-	}
-	return (h);
-}
-
-/**
- * check_pal - checks and flags if the same
- * @h: head pointer
- * @len: len of list
- *
- * Return: flag
- */
-
-int check_pal(listint_t **h, int len)
-{
-	int i = len / 2;
-	int flag = 0;
-	int j = 0;
-
-	if (i >= 2)
-		i++;
-	while (i)
-	{
-		if (((h[j++])->n) == ((h[--len])->n))
-			flag++;
-		i--;
-	}
-
-	return (flag);
-}
-
-/**
  * is_palindrome - checks if a singly linked list is a palindrome
  * @head: head of the node
  *
@@ -64,10 +12,13 @@ int check_pal(listint_t **h, int len)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t **p, **q, *r;
+	listint_t *r;
+	int *x;
 	int len = 0;
 	int i = 0;
-	int f;
+	int f = 0;
+	int a = 0;
+ 
 
 	r = *head;
 	while (r)
@@ -76,23 +27,32 @@ int is_palindrome(listint_t **head)
 		len++;
 	}
 
-	p = malloc(sizeof(listint_t) * len);
-	if (!p)
+	x = malloc(sizeof(int) * (len - 1));
+	if (!x)
 	{
-		free(p);
+		free(x);
 		return (0);
 	}
 	if (len <= 1)
 		return (1);
-	while (len > i)
-		p[i++] = *head;
-	q = sparse_pointers(p, len);
+	while (len > i && (*head))
+	{
+		x[i++] = (*head)->n;
+		*head = (*head)->next;
+	}
 
-	f = check_pal(q, len);
-
-	if (f == len / 2)
+	len = len / 2;
+	i--;
+	while (len > a)
+	{
+		if (x[a] == x[i])
+			f++;
+		a++, --i;
+	}
+	
+	if (f == len)
 		return (1);
+		
 	return (0);
 
 }
-
