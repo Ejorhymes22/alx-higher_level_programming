@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
     s = roman_string
     if s is None:
         return 0
-    
+
     for i in range(0, len(roman_string)):
         if s[i] not in a_dict:
             return 0
@@ -29,3 +29,4 @@ def roman_to_int(roman_string):
             sums += a_dict[s[i]]
     if sums < 0:
         sums = -sums
+    return sums
