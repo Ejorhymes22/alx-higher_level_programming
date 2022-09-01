@@ -7,7 +7,7 @@ def roman_to_int(roman_string):
     if type(s) != str:
         return 0
 
-    for i in range(0, len(roman_string)): 
+    for i in range(0, len(roman_string)):
         if s[i] not in a_dict:
             return 0
         elif i > 0:
