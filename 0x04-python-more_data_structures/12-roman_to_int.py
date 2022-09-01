@@ -28,9 +28,7 @@ def roman_to_int(roman_string):
                 sums += a_dict[s[i]]
         else:
             sums += a_dict[s[i]]
-        if i + 3 <= len(s):
-            if a_dict[s[i]] == a_dict[s[i + 1]] and a_dict[s[i + 2]] == a_dict[s[i]] and a_dict[s[i]] <= a_dict[s[i + 3]]:
-                return 0
+
     if sums < 0:
         sums = -sums
     return sums
