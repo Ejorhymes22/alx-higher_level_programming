@@ -9,7 +9,7 @@ def square_matrix_simple(matrix=[]):
             x[k].append(z ** 2)
         k += 1
     return x"""
-    x = []    
+    x = []
     for i in matrix:
-            x.append(list(map(lambda x: x ** 2, i)))
+        x.append(list(map(lambda x: x ** 2, i)))
     return x
