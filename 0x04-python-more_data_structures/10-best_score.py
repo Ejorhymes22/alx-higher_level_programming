@@ -5,7 +5,7 @@ def best_score(a_dictionary):
     if a_dictionary is None:
         return None
     for i in list(a_dictionary):
-        if a_dictionary[i].isdigit() != True:
+        if str(a_dictionary[i]).isdigit() != True:
             return None
         if a_dictionary[i] > maxi:
             maxi = a_dictionary[i]
