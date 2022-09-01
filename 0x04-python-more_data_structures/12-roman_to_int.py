@@ -13,6 +13,8 @@ def roman_to_int(roman_string):
         elif i > 0:
             if a_dict[s[i - 1]] >= a_dict[s[i]]:
                 if i + 1 < len(s):
+                    if s[i + 1] not in a_dict:
+                        return 0
                     if a_dict[s[i + 1]] <= a_dict[s[i]]:
                         sums += a_dict[s[i]]
                     else:
