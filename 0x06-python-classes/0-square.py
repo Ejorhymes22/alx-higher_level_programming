@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-class Square:
-    """This is an empty score"""
-    pass
+if __name__ == "__main__":
+    class Square:
+        """This is an empty score"""
+        pass
