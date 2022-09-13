@@ -15,9 +15,10 @@ class Square:
         Args:
         size: Describes the size of a square
         """
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
+        try:
+            if size < 0:
+                raise ValueError("size must be >= 0")
+        except TypeError:
+            print("size must be an integer")
         else:
-            self._size = size
+            self.__size = size
