@@ -5,7 +5,11 @@ This class defines a square
 
 
 class Square:
-    """defines a square with setter""" 
+    """defines a square with setter"""
+    def __init__(self, size=0):
+        """size of initial"""
+        self.__size = size
+
     @property
     def size(self):
         """size of square"""
@@ -19,10 +23,6 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
-    def __init__(self, size=0):
-        """size of initial"""
-        self.__size = size
 
     def area(self):
         """arae of the self"""
