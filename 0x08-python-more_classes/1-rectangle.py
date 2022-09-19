@@ -4,40 +4,53 @@
 creates a rectangle
 """
 
-if __name__ == "__main__":
-    class Rectangle:
+
+class Rectangle:
+    """
+    defines a rectangle
+    """
+    @property
+    def width(self):
+        """dfines the width"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """defines width
+
+        Args:
+            value: value of width positive int
         """
-        defines a rectangle
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """dfines the height"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """defines hegit
+
+        Args:
+            value: must be width positive int
         """
-        @property
-        def width(self):
-            """dfines the width"""
-            return self.__width
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
-        @width.setter
-        def width(self, value):
-            """defines width"""
-            if type(value) != int:
-                raise TypeError("width must be an integer")
-            if value < 0:
-                raise ValueError("width must be >= 0")
-            self.__width = value
+    def __init__(self, width=0, height=0):
+        """initializes a rectangle
 
-        @property
-        def height(self):
-            """dfines the height"""
-            return self.__height
-
-        @height.setter
-        def height(self, value):
-            """defines hegit"""
-            if type(value) != int:
-                raise TypeError("height must be an integer")
-            if value < 0:
-                raise ValueError("height must be >= 0")
-            self.__height = value
-
-        def __init__(self, width=0, height=0):
-            """initializes a rectangle"""
-            self.width = width
-            self.height = height
+        Args:
+            width: must be an int
+            height: of the rectangle
+        """
+        self.width = width
+        self.height = height
