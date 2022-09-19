@@ -41,5 +41,3 @@ class Rectangle:
         """initializes a rectangle"""
         self.__width = width
         self.__height = height
-
-

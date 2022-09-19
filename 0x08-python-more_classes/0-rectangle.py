@@ -4,6 +4,7 @@
 empty Rectangle
 """
 
+
 class Rectangle:
     """
     defines an rectangle
