@@ -1,6 +1,6 @@
 #!/usr/bin/pyton3
 """
-creates a rectangle
+Creates a rectangle
 Defines aRetangle
 """
 
@@ -9,7 +9,7 @@ class Rectangle:
     """Rectangle defines a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """initializes a rectangle
+        """Initializes a rectangle
 
         Args:
             width: width of rectangle
@@ -20,12 +20,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """dfines the width"""
+        """Retrieves the width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """defines width
+        """Sets the width
 
         Args:
             value: value fo width
@@ -38,12 +38,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """dfines the height"""
+        """Retrieves the height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """defines hegit
+        """Sets the height
 
         Args:
             value: of height
@@ -55,18 +55,18 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """returns the rectangle area
+        """Returns the rectangle area
 
         Returns:
-            area fo rectangle
+            Area fo rectangle
         """
         return self.__width * self.__height
 
     def perimeter(self):
-        """perimeter of rectangle
+        """Perimeter of rectangle
 
         Returns:
-            perimeter of the rectangle
+            Perimeter of the rectangle
         """
         if self.__width == 0 or self.__height == 0:
             return 0
