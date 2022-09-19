@@ -1,6 +1,7 @@
 #!/usr/bin/pyton3
 """
 creates a rectangle
+Defines aRetangle
 """
 
 
