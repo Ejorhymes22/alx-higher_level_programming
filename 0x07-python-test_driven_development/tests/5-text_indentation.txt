@@ -1,0 +1,29 @@
+==========================
+test for printing a string
+===========================
+
+Importing a text:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+checking for documentation:
+	>>> m = __import__('5-text_indentation').__doc__
+	>>> n = __import__('5-text_indentation').text_indentation.__doc__
+	>>> len(m) > 1 and len(n) > 1
+	True
+
+checking values:
+	>>> text_indentation(1)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation("     ")
+	     
+	>>> text_indentation("last   last")
+	last   last
+
+	>>> text_indentation("[[2, 3], 3]")
+	[[2, 3], 3]
+
+	>>> text_indentation("last.")
+	last.
+	<BLANKLINE>

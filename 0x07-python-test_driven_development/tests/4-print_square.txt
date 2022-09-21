@@ -1,0 +1,33 @@
+===========================
+This is a tesst for square
+===========================
+
+
+Import this function:
+	>>> print_square = __import__('4-print_square').print_square
+
+check for a doc:
+	>>> m = __import__('4-print_square').__doc__
+	>>> n = __import__('4-print_square').print_square.__doc__
+	>>> len(m) > 1 and len(n) > 1
+	True
+
+check for prints:
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(0)
+	
+	>>> print_square(1)
+	#
+
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'

@@ -1,0 +1,35 @@
+=========================
+Tests a string function
+=========================
+
+
+Import Test function:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Tests:
+	>>> say_my_name("Jon", "Smith")
+	My name is Jon Smith
+
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+	>>> say_my_name("las", 1)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(1, 0)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> m = __import__('3-say_my_name').__doc__
+	>>> len(m) > 1
+	True
+
+	>>> m = __import__('3-say_my_name').say_my_name.__doc__
+	>>> len(m) > 1
+	True
