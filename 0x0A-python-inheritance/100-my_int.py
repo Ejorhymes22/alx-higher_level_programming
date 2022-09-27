@@ -16,6 +16,7 @@ class MyInt(int):
 
     def __str__(self):
         return "{}".format(self.__value)
+
     def __eq__(self, other):
         return self.__value != other
 
