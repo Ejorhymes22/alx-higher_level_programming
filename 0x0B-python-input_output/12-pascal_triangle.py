@@ -14,6 +14,8 @@ def pascal_triangle(n):
     """
     p, i, j, past, outer = 1, 0, 1, [1], [[1]]
 
+    if n <= 0:
+        return []
     while j < n:
         inner_list = []
         while i < p:
