@@ -12,13 +12,18 @@ def append_after(filename="", search_string="", new_string=""):
         search_string: the string to searchfor
         new_string: to insert
     """
-    with open(filename, "r", encoding='utf-8') as f:
-        list_contents = list(f)
-    i = 0
-    for line in list_contents:
-        i += 1
-        if search_string in line:
-            list_contents.insert(i, new_string)
-    with open(filename, "w") as f:
-        list_contents = "".join(list_contents)
-        f.write(list_contents)
+    try:
+        with open(filename, "r", encoding='utf-8') as f:
+            list_contents = list(f)
+    except Exception:
+        pass
+    else:
+        i = 0
+        for line in list_contents:
+            i += 1
+            if search_string != "":
+                if search_string in line:
+                    list_contents.insert(i, new_string)
+        with open(filename, "w+") as f:
+            list_contents = "".join(list_contents)
+            f.write(list_contents)
