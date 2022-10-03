@@ -5,13 +5,14 @@ base class
 import json
 import csv
 
+
 class Base:
     """this is the base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
         """class constuctor"""
-        if id == None:
+        if id is None:
             Base.__nb_objects += 1
             id = Base.__nb_objects
         self.id = id
@@ -19,8 +20,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the json repr. of a string"""
-        if list_dictionaries is None:
-            return []
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -37,10 +38,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the json string repr"""
-        if json_string == None or (json_string) == []:
+        if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
-
 
     @classmethod
     def create(cls, **dictionary):
@@ -49,7 +49,6 @@ class Base:
         cls.update(dummy, **dictionary)
         return dummy
 
-    
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
@@ -75,9 +74,9 @@ class Base:
             for i, k in dict_list[0].items():
                 dict_keys.append(i)
             with open("{}.csv".format(cls.__name__), "w+") as csvfile:
-                #writer = csv.writer(csvfile)
                 for i in range(len(dict_list)):
-                    writer = csv.DictWriter(csvfile, fieldnames=dict_list[i].keys())
+                    writer = csv.DictWriter(csvfile,
+                                            fieldnames=dict_list[i].keys())
                     writer.writeheader()
                     writer.writerows(dict_list)
 
@@ -92,8 +91,6 @@ class Base:
                     print(i)
         except FileNotFoundError:
             return []
-        #print(type(dict_list))
-        #list_json = (cls.from_json_string(s))
         create_list = []
         for i in dict_list:
             create_list.append(cls.create(**i))

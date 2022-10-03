@@ -18,15 +18,13 @@ class TestBaseDocs(unittest.TestCase):
         """Set up for the doc tests"""
         cls.base_funcs = inspect.getmembers(Base, inspect.isfunction)
 
-    """
     def test_pep8_conformance_base(self):
-        Test that models/base.py conforms to PEP8.
+        """Test that models/base.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    """
     def test_pep8_conformance_test_base(self):
         """Test that tests/test_models/test_base.py conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
@@ -94,12 +92,11 @@ class TestBase(unittest.TestCase):
         self.assertTrue(type(json_s) is str)
         self.assertEqual(json_s, "[]")
 
-    """
     def test_None_to_json_String(self):
         json_s = Base.to_json_string(None)
         self.assertTrue(type(json_s) is str)
         self.assertEqual(json_s, "[]")
-    """
+
     def test_from_json_string(self):
         """Tests regular from_json_string"""
         json_str = '[{"id": 9, "width": 5, "height": 6, "x": 7, "y": 8}, \

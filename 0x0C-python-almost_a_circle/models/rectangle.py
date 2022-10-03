@@ -72,7 +72,7 @@ class Rectangle(Base):
 
     def display(self):
         """prints to stdout a rect instance"""
-        for l in range(self.__y):
+        for length in range(self.__y):
             print()
         for i in range(self.__height):
             for k in range(self.__x):
@@ -83,7 +83,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns a string"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """updates the class Rect"""
@@ -112,4 +116,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
-        return dict(id=self.id, width=self.width, height=self.height, x=self.x, y=self.y)
+        return dict(id=self.id, width=self.width, height=self.height,
+                    x=self.x, y=self.y)
