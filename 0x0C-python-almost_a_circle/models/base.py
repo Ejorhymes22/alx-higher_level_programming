@@ -37,7 +37,7 @@ class Base:
                 dict_list.append(i.to_dictionary())
         json_string = cls.to_json_string(dict_list)
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
-                f.write(json_string)
+            f.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
