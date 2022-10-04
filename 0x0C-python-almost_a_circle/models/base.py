@@ -49,6 +49,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
+        from models.rectangle import Rectangle
+        from models.square import Square
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1, 2)
         elif cls.__name__ == "Square":
