@@ -2,9 +2,12 @@
 """
 base class
 """
+
+
 import json
 import csv
 import turtle
+
 
 class Base:
     """this is the base class"""
@@ -96,8 +99,7 @@ class Base:
             create_list.append(cls.create(**i))
         return create_list
 
-
-     @staticmethod
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """opens a window and draws all the Rectangles and Squares"""
         screen_width = 620
