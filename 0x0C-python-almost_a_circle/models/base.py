@@ -55,7 +55,7 @@ class Base:
             dummy = cls(1, 1)
         else:
             dummy = None
-        cls.update(dummy, **dictionary)
+        dummy.update(**dictionary)
         return dummy
 
     @classmethod
