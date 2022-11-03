@@ -1,5 +1,5 @@
 -- lists all the cities of california found in a databases
-SELECT *
+SELECT id, name
 FROM cities
 WHERE state_id = (
 	SELECT id
