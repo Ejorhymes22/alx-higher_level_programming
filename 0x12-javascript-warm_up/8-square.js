@@ -4,7 +4,7 @@ if (Number.isInteger(a)) {
   for (let i = 0; i < a; i++) {
     let x = '';
     for (let j = 0; j < a; j++) {
-      x += 'x';
+      x += 'X';
     }
     console.log(x);
   }
