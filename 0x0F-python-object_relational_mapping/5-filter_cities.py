@@ -11,7 +11,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities WHERE \
                 cities.state_id=(SELECT id FROM states \
-                WHERE states.name=%s)", [stateName])
+                WHERE states.name=%s ORDER BY cities.id ASC)", [stateName])
     stateList = cur.fetchall()
 
     z = 1
