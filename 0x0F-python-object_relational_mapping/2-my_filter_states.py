@@ -3,14 +3,15 @@
 import sys
 import MySQLdb
 
+if __name__ == "__main__":
+    db = MySQLdb.connect(host='localhost', user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3])
+    cur = db.cursor()
+    element = sys.argv[4]
+    cur.execute("SELECT * FROM states \
+                WHERE name=%s ORDER BY id ASC", [element])
+    listcur = cur.fetchone()
+    print(listcur)
 
-db = MySQLdb.connect(host='localhost', user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-cur = db.cursor()
-element = sys.argv[4];
-cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", [element])
-listcur = cur.fetchone()
-print(listcur)
-
-
-cur.close()
-db.close()
+    cur.close()
+    db.close()
