@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This selects cities from a particular state"""
 
 if __name__ == "__main__":
     import sys
