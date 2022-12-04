@@ -6,8 +6,6 @@ from sqlalchemy import create_engine, Integer, String, Column, ForeignKey
 from sqlalchemy.orm import relationship
 
 
-engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(sys.argv[1], sys.argv[2], sys.argv[3]))
-
 class City(Base):
     """This inherits from Base
     has id and name
@@ -20,5 +18,3 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
     state = relationship("State")
-
-#Base.metadata.create_all(engine)
