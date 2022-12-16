@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """ fetches from a url"""
 
-import urllib.request
+from urllib import request
 
-with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
+with request.urlopen('https://alx-intranet.hbtn.io/status') as res:
     html = res.read()
 
 print('Body response:')
-print('\t-type: ', type(html))
-print('\t-content: ', html)
+print('\t- type: ', type(html))
+print('\t- content: ', html)
 if res.headers.get_content_charset() == 'utf-8':
-    print('\t-utf8 content: OK')
+    print('\t- utf8 content: OK')
