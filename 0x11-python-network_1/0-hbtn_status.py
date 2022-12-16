@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""" fetches from a url"""
+""" fetches from a url url is intranet
+"""
 
 from urllib import request
 
@@ -8,7 +9,7 @@ if __name__ == "__main__":
         html = res.read()
 
     print('Body response:')
-    print('\t- type: ', type(html))
-    print('\t- content: ', html)
+    print('\t- type: {}'.format(type(html)))
+    print('\t- content: {}'.format(html))
     if res.headers.get_content_charset() == 'utf-8':
         print('\t- utf8 content: OK')
