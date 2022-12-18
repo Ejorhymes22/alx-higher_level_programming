@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# this takes 2 argumernt and list 10 commit s on github
+"""this takes 2 argumernt and list 10 commit s on github
+"""
 
 import sys
 import requests
