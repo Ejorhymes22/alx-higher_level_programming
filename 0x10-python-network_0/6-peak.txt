@@ -1,0 +1,2 @@
+#compexity of peak 6
+0(log(n))
